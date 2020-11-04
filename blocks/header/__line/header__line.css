@@ -1,0 +1,13 @@
+.header__line {
+  min-width: 880px;
+  margin: 41px auto 0;
+  border: 1px solid #545454;
+  opacity: 0.7;
+}
+
+@media screen and (max-width:321px) {
+  .header__line {
+    min-width: 320px;
+    margin: 30px auto 0;
+  }
+}
