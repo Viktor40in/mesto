@@ -5,11 +5,18 @@
   gap: 20px 17px;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 1023px) {
+  .elements {
+    gap: 20px 20px;
+    margin: 51px auto 0;
+  }  
+}
+
+@media screen and (max-width: 767px) {
   .elements {
     grid-template-columns: 282px;
     gap: 20px 0;
-    margin: 0 auto;
+ 
     margin: 36px 0 0;
   }  
 }

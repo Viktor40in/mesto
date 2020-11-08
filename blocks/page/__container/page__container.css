@@ -3,7 +3,13 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 1023px) {
+  .page__container {
+    max-width: 768px;
+  }  
+}
+
+@media screen and (max-width: 767px) {
   .page__container {
     max-width: calc(100% - 38px);
   }  

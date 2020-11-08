@@ -6,8 +6,8 @@
   padding: 0;
   align-self: center;
   outline: none;
-  background: transparent url(../../../images/add-Button.svg) cover no-repeat;
-  background-size:  150px 50px;
+  background: url(../../../images/add-Button.svg);
+  background-size: 150px 50px;
   width: 150px;
   height: 50px;
 }
