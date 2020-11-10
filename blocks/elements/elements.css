@@ -14,9 +14,9 @@
 
 @media screen and (max-width: 767px) {
   .elements {
+    max-width: calc(100% - 38px);
     grid-template-columns: 282px;
     gap: 20px 0;
- 
-    margin: 36px 0 0;
+    margin: 36px auto 0;
   }  
 }
