@@ -6,6 +6,8 @@
   justify-content: flex-start;
 }
 
+
+
 @media screen and (max-width: 321px) {
   .header {
   margin: 28px 0 0;
