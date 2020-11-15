@@ -3,13 +3,24 @@
   max-height: 33px;
   margin: 45px 0 0;
 }
-
 @media screen and (max-width:1023px) {
   .header__logo {
-    max-width: calc(100% - 500px);
+    max-width: calc(100% - 630px);
+  }
+}
+@media screen and (max-width:900px) {
+  .header__logo {
+    max-width: calc(100% - 630px);
   }
 }  
 @media screen and (max-width:767px) {
+  .header__logo {
+    max-width: calc(100% - 617px);
+    max-height: 24px;
+    margin: 0 0 0 27px;
+  }
+}
+@media screen and (max-width:704px) {
   .header__logo {
     max-width: calc(100% - 217px);
     max-height: 24px;
