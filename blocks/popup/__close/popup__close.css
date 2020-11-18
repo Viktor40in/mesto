@@ -2,12 +2,12 @@
   width: 60px;
   height: 60px;
   background: transparent url(../../../images/popup__close.svg);
-  background-size: 55px 55px;
+  background-size: 57px 57px;
   background-repeat: no-repeat;
   border: none;
   position: absolute;
-  top: -53px;
-  right: -54px;
+  top: -45px;
+  right: -52px;
   padding: 0;
   margin: 0;
   cursor: pointer;

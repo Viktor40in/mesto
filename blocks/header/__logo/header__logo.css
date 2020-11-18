@@ -8,11 +8,6 @@
     max-width: calc(100% - 630px);
   }
 }
-@media screen and (max-width:900px) {
-  .header__logo {
-    max-width: calc(100% - 630px);
-  }
-}  
 @media screen and (max-width:767px) {
   .header__logo {
     max-width: calc(100% - 617px);
@@ -23,7 +18,5 @@
 @media screen and (max-width:704px) {
   .header__logo {
     max-width: calc(100% - 217px);
-    max-height: 24px;
-    margin: 0 0 0 27px;
   }
 }

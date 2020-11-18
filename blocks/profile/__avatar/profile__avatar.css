@@ -6,14 +6,11 @@
 @media screen and (max-width:1023px) {
   .profile__avatar {
     max-width: calc(100% - 50px);
-    max-height: 120px;
     margin: 0 auto;
   }  
 }
 @media screen and (max-width:321px) {
   .profile__avatar {
     max-width: calc(100% - 100px);
-    max-height: 120px;
-    margin: 0 auto;
   }  
 }
