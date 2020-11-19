@@ -13,20 +13,24 @@ function doPopup() {
   fieldTwo.value = subTitle.textContent;
 }
 
+function closePopup() {
+  popup.classList.toggle('popup_opened');
+}
+
 function popupClickHandler(event) {
   if (event.target.classList.contains('popup')) {
-    doPopup();
+    closePopup();
   }
 }
-  
+
 function submitForm(event) {
   event.preventDefault();
   title.textContent = fieldOne.value;
   subTitle.textContent = fieldTwo.value;
-  doPopup();
+  closePopup();
 }
 
 editButton.addEventListener('click', doPopup);
-popupCloseButton.addEventListener('click', doPopup);
+popupCloseButton.addEventListener('click', closePopup);
 popup.addEventListener('mousedown', popupClickHandler);
 form.addEventListener('submit', submitForm);
