@@ -7,6 +7,7 @@ let subTitle = document.querySelector('.profile-info__subtitle');
 let fieldOne = document.querySelector('.popup__input_type-name');
 let fieldTwo = document.querySelector('.popup__input_type-profession');
 
+
 function doPopup() {
   popup.classList.toggle('popup_opened');
   fieldOne.value = title.textContent;
@@ -33,4 +34,26 @@ function submitForm(event) {
 editButton.addEventListener('click', doPopup);
 popupCloseButton.addEventListener('click', closePopup);
 popup.addEventListener('mousedown', popupClickHandler);
+form.addEventListener('submit', submitForm);
+
+
+/* --------------- Project work V --------------- */
+let popupCard = document.querySelector('.popupCard');
+let popupCardCloseButton = document.querySelector('.popupCard__close');
+let addButton = document.querySelector('.profile__add-button');
+
+function doPopupCard() {
+  popupCard.classList.toggle('popupCard_opened');
+}
+function closePopupCard() {
+  popupCard.classList.toggle('popupCard_opened');
+}
+function popupCardClickHandler(event) {
+  if (event.target.classList.contains('popupCard')) {
+    closePopupCard();
+  }
+}
+addButton.addEventListener('click', doPopupCard);
+popupCardCloseButton.addEventListener('click', closePopupCard);
+popupCard.addEventListener('mousedown', popupCardClickHandler);
 form.addEventListener('submit', submitForm);
