@@ -24,51 +24,9 @@
       <button class="profile__add-button" type="button" aria-label="add-button"></button>
     </section>
     <section class="elements">
-      <article class="element">
-        <img src="./images/elements/karachaevsk1.jpg" alt="Карачаевск" class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Карачаевск</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/elements/elbrus2.jpg" alt="Эльбрус" class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Гора Эльбрус</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/elements/dombai3.jpg" alt="Домбай " class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Домбай</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/elements/elbrus2.jpg" alt="Эльбрус" class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Гора Эльбрус</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/elements/dombai3.jpg" alt="Домбай" class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Домбай</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/elements/karachaevsk1.jpg" alt="Карачаево-Черкессия" class="element__image">
-        <div class="element__block">
-          <h2 class="element__text">Карачаево-Черкессия</h2>
-          <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
-        </div>
-      </article>
     </section>
     <footer class="footer">
-      <p class="footer__text">© 2020 Mesto Russia</p>
+      <p class="footer__text">© 2021 Mesto Russia</p>
     </footer>
   </div>
   <div class="popup">
@@ -87,12 +45,21 @@
       <button class="popupCard__close" type="button"></button>
       <h3 class="popupCard__title">Новое место</h3>
       <form class="popupCard__form" name="popup__form">
-        <input class="popupCard__input" placeholder="Название" name="name">   
-        <input class="popupCard__input" placeholder="Ссылка на изображение" name="URL">
-        <button class="popupCard__submit" type="submit">Изменить</button>
+        <input class="popupCard__input popupCard__input_name" placeholder="Название" name="name">   
+        <input class="popupCard__input popupCard__input_url" placeholder="Ссылка на изображение" name="URL">
+        <button class="popupCard__submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
+  <template class="templateCard">
+    <article class="element">
+      <img class="element__image">
+      <div class="element__block">
+        <h2 class="element__text"></h2>
+        <button class="element__button" aria-label="like" type="button"><img src="./images/elements/Vector-like.svg" alt="Лайк"></button>
+      </div>
+    </article>
+  </template>
   <script src="scripts/index.js"></script>
 </body>
 </html>
