@@ -108,7 +108,7 @@ render()
 const confirmAddCard = document.querySelector('.popupCard__submit');
 let fieldOneAdd = document.querySelector('.popupCard__input_name');
 let fieldTwoAdd = document.querySelector('.popupCard__input_url');
-function confirmAdding(){
+function confirmAdding(event){
   event.preventDefault();
   const htmlElement = itemTemplate.cloneNode(true); 
   htmlElement.querySelector('.element__text').textContent = fieldOneAdd.value;
