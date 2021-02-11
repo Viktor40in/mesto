@@ -43,7 +43,6 @@ form.addEventListener('submit', submitForm);
 let popupCard = document.querySelector('.popupCard');
 let popupCardCloseButton = document.querySelector('.popupCard__close');
 let addButton = document.querySelector('.profile__add-button');
-
 function doPopupCard() {
   popupCard.classList.toggle('popupCard_opened');
 }
@@ -66,7 +65,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
   {
-    name: 'Челябинская область',
+    name: 'Челябинский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
   {
@@ -86,25 +85,21 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ]; 
-
 const itemTemplate = document.querySelector(".templateCard").content;
 const cardBox = document.querySelector(".elements");
-
 function render() {
   initialCards.forEach(renderItem);
 }
-
 function renderItem(object) {
   const htmlElement = itemTemplate.cloneNode(true); 
   htmlElement.querySelector('.element__text').innerText = object.name;
   htmlElement.querySelector('.element__image').setAttribute('src', object.link);
+  htmlElement.querySelector('.element__recycle').addEventListener('click',toTrash);
   cardBox.appendChild(htmlElement);
 }
-
 render()
 
 // function of adding new card
-
 const confirmAddCard = document.querySelector('.popupCard__submit');
 let fieldOneAdd = document.querySelector('.popupCard__input_name');
 let fieldTwoAdd = document.querySelector('.popupCard__input_url');
@@ -116,3 +111,8 @@ function confirmAdding(event){
   cardBox.prepend(htmlElement);
 }
 confirmAddCard.addEventListener('click', confirmAdding);
+
+//recycle button in action
+function toTrash(evt){
+  evt.target.closest('.element').remove();
+}

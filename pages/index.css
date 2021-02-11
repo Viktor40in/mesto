@@ -31,7 +31,6 @@
 @import url(../blocks/popup/__input/_type-name/popup__input_type-name.css);
 @import url(../blocks/popup/__input/_type-profession/popup__input_type-profession.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
-
 @import url(../blocks/popupCard/popupCard.css);
 @import url(../blocks/popupCard/__content/popupCard__content.css);
 @import url(../blocks/popupCard/__close/popupCard__close.css);
@@ -40,3 +39,4 @@
 @import url(../blocks/popupCard/__form/popupCard__form.css);
 @import url(../blocks/popupCard/__input/popupCard__input.css);
 @import url(../blocks/popupCard/__submit/popupCard__submit.css);
+@import url(../blocks/element/__recycle/element__recycle.css);

@@ -1,7 +1,7 @@
 .profile-info__edit-button {
   width: 24px;
   height: 24px;
-  background: transparent url(../../../images/edit-button/edit-button.svg);
+  background: transparent url(../../../images/edit-button.svg);
   background-size: 24px 24px;
   border: none;
   background-color: black;
