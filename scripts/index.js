@@ -94,7 +94,8 @@ function renderItem(object) {
   const htmlElement = itemTemplate.cloneNode(true); 
   htmlElement.querySelector('.element__text').innerText = object.name;
   htmlElement.querySelector('.element__image').setAttribute('src', object.link);
-  htmlElement.querySelector('.element__recycle').addEventListener('click',toTrash);
+  htmlElement.querySelector('.element__recycle').addEventListener('click', toTrash);
+  htmlElement.querySelector('.element__button').addEventListener('click', likeButtonToBlack);
   cardBox.appendChild(htmlElement);
 }
 render()
@@ -115,4 +116,9 @@ confirmAddCard.addEventListener('click', confirmAdding);
 //recycle button in action
 function toTrash(evt){
   evt.target.closest('.element').remove();
+}
+
+//like button to black
+function likeButtonToBlack(evt) {
+  evt.target.classList.toggle('element__button_black');
 }
