@@ -1,4 +1,4 @@
-.popup {
+.popupCard {
   font-family: 'Inter', 'Arial', sans-serif;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@
   display: none;
 }
 
-.popup:hover > div {
+.popupCard:hover > div {
   visibility: visible;
   opacity: 1;
 }

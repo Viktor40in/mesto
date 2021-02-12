@@ -1,0 +1,11 @@
+.popupCard__form {
+  display: flex;
+  flex-direction: column;
+  margin: 54px 0 0;
+}
+
+@media screen and (max-width:767px) {
+  .popupCard__form {
+    margin: 75px 0 0;
+  }
+}

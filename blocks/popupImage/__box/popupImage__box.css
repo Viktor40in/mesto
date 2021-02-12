@@ -1,0 +1,11 @@
+.popupImage__box {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 36px;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
