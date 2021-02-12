@@ -41,3 +41,9 @@
 @import url(../blocks/popupCard/__submit/popupCard__submit.css);
 @import url(../blocks/element/__recycle/element__recycle.css);
 @import url(../blocks/element/__button/_black/element__button_black.css);
+@import url(../blocks/popupImage/popupImage.css);
+@import url(../blocks/popupImage/__image/popupImage__image.css);
+@import url(../blocks/popupImage/_opened/popupImage_opened.css);
+@import url(../blocks/popupImage/__box/popupImage__box.css);
+@import url(../blocks/popupImage/__title/popupImage__title.css);
+@import url(../blocks/popupImage/__close/popupImage__close.css);

@@ -40,9 +40,9 @@ form.addEventListener('submit', submitForm);
 /* --------------- Project work V --------------- */
 
 // popup for adding Cards
-let popupCard = document.querySelector('.popupCard');
-let popupCardCloseButton = document.querySelector('.popupCard__close');
-let addButton = document.querySelector('.profile__add-button');
+const popupCard = document.querySelector('.popupCard');
+const popupCardCloseButton = document.querySelector('.popupCard__close');
+const addButton = document.querySelector('.profile__add-button');
 function doPopupCard() {
   popupCard.classList.toggle('popupCard_opened');
 }
@@ -85,8 +85,8 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ]; 
-const itemTemplate = document.querySelector(".templateCard").content;
-const cardBox = document.querySelector(".elements");
+const itemTemplate = document.querySelector('.templateCard').content;
+const cardBox = document.querySelector('.elements');
 function render() {
   initialCards.forEach(renderItem);
 }
@@ -94,13 +94,14 @@ function renderItem(object) {
   const htmlElement = itemTemplate.cloneNode(true); 
   htmlElement.querySelector('.element__text').innerText = object.name;
   htmlElement.querySelector('.element__image').setAttribute('src', object.link);
-  htmlElement.querySelector('.element__recycle').addEventListener('click', toTrash);
-  htmlElement.querySelector('.element__button').addEventListener('click', likeButtonToBlack);
+  htmlElement.querySelector('.element__recycle').addEventListener('click', toTrash); // listener for recycle button
+  htmlElement.querySelector('.element__button').addEventListener('click', likeButtonToBlack); // listener for negro button
+  htmlElement.querySelector('.element__image').addEventListener('click', renderPopupImage); // listener for image popup
   cardBox.appendChild(htmlElement);
 }
 render()
 
-// function of adding new card
+// function for adding new card
 const confirmAddCard = document.querySelector('.popupCard__submit');
 let fieldOneAdd = document.querySelector('.popupCard__input_name');
 let fieldTwoAdd = document.querySelector('.popupCard__input_url');
@@ -122,3 +123,29 @@ function toTrash(evt){
 function likeButtonToBlack(evt) {
   evt.target.classList.toggle('element__button_black');
 }
+
+//popup for image
+const popupForImage = document.querySelector('.popupImage');
+const imageFromPopup = document.querySelector('.popupImage__image');
+const popupImageTitle = document.querySelector('.popupImage__title');
+const popupImageCloseButton = document.querySelector('.popupImage__close');
+function renderPopupImage(evt) {
+  popupForImage.classList.toggle('popupImage_opened');
+  imageFromPopup.src = evt.target.getAttribute('src');
+  popupImageTitle.innerText = evt.target.closest('.element').querySelector('.element__text').textContent;
+}
+function closePopupImage() {
+  popupForImage.classList.toggle('popupImage_opened');
+}
+function popupImageClickHandler(event) {
+  if (event.target.classList.contains('popupImage')) {
+    closePopupImage();
+  }
+}
+popupImageCloseButton.addEventListener('click', closePopupImage);
+popupForImage.addEventListener('mousedown', popupImageClickHandler);
+
+//const  templatePopupImage = document.querySelector('.templatePopup').content;
+//cardBox.appendChild(popupImage)
+//const popupImage = templatePopupImage.cloneNode(true);
+//popupImage.querySelector('.popupImage__image').src = evt.target.getAttribute(src).textContent;S
