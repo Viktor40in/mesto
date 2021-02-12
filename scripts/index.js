@@ -144,8 +144,3 @@ function popupImageClickHandler(event) {
 }
 popupImageCloseButton.addEventListener('click', closePopupImage);
 popupForImage.addEventListener('mousedown', popupImageClickHandler);
-
-//const  templatePopupImage = document.querySelector('.templatePopup').content;
-//cardBox.appendChild(popupImage)
-//const popupImage = templatePopupImage.cloneNode(true);
-//popupImage.querySelector('.popupImage__image').src = evt.target.getAttribute(src).textContent;S

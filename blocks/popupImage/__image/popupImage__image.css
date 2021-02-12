@@ -3,3 +3,10 @@
   max-height: 30vw;
   margin: auto auto;
 } 
+
+@media screen and (max-width: 767px) {
+  .popupImage__image {
+    max-width: 240px;
+    max-height: 290px;
+  }
+}
