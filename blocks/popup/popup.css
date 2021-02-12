@@ -10,3 +10,8 @@
   left: 0;
   display: none;
 }
+
+.popup:hover > div {
+  visibility: visible;
+  opacity: 1;
+}

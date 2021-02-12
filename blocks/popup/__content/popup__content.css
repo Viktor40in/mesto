@@ -8,6 +8,8 @@
   padding: 40px 36px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 @media screen and (max-width: 767px) {
@@ -16,3 +18,4 @@
     max-width: 282px;
   }
 }
+

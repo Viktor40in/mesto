@@ -10,3 +10,8 @@
   left: 0;
   display: none;
 }
+
+.popupCard:hover > div {
+  visibility: visible;
+  opacity: 1;
+}

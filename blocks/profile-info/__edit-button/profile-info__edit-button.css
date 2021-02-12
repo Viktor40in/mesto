@@ -24,3 +24,8 @@
     align-self: center;
   }  
 }
+
+.profile-info__edit-button:active .popup__content {
+  visibility: visible;
+  opacity: 1;
+}
