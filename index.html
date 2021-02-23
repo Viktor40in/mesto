@@ -29,36 +29,36 @@
       <p class="footer__text">© 2021 Mesto Russia</p>
     </footer>
   </div>
-<!--popup for edit title-->
-  <div class="popup">
+<!--popup for edit person-->
+  <div class="popup popupEditPerson">
     <div class="popup__content">
       <button class="popup__close" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form" name="popup__form">
-        <input class="popup__input popup__input_type-name" name="name">   
-        <input class="popup__input popup__input_type-profession" name="profession">
+        <input class="popup__input popup__input_type-name" name="name" placeholder="Имя">   
+        <input class="popup__input popup__input_type-profession" name="profession" placeholder="Род деятельности">
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
 <!--popup for adding cards-->
-  <div class="popupCard">
-    <div class="popupCard__content">
-      <button class="popupCard__close" type="button"></button>
-      <h3 class="popupCard__title">Новое место</h3>
-      <form class="popupCard__form" name="popup__form">
-        <input class="popupCard__input popupCard__input_name" placeholder="Название" name="name">   
-        <input class="popupCard__input popupCard__input_url" placeholder="Ссылка на изображение" name="URL">
-        <button class="popupCard__submit" type="submit">Сохранить</button>
+  <div class="popup popupCard">
+    <div class="popup__content">
+      <button class="popup__close popupCard__close" type="button"></button>
+      <h3 class="popup__title">Новое место</h3>
+      <form class="popup__form" name="popup__form">
+        <input class="popup__input popup__input_name" placeholder="Название" name="name">   
+        <input class="popup__input popup__input_url" placeholder="Ссылка на изображение" name="URL">
+        <button class="popup__submit popupCard__submit" type="submit">Создать</button>
       </form>
     </div>
   </div>
 <!--popup for image-->
-  <div class="popupImage">
-    <div class="popupImage__box">
-      <button class="popupImage__close" type="button"></button>
-      <img class="popupImage__image" alt="Изображение места" src="  ">
-      <p class="popupImage__title"></p>
+  <div class="popup popupImage">
+    <div class="popup__box">
+      <button class="popup__close_image" type="button"></button>
+      <img class="popup__image" alt="Изображение места" src="  ">
+      <p class="popup__title_image"></p>
     </div>
   </div>
 <!--template for cards-->
@@ -72,6 +72,7 @@
       </div>
     </article>
   </template>
+  <script src="scripts/initial-cards.js"></script>
   <script src="scripts/index.js"></script>
 </body>
 </html>
