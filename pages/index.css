@@ -35,5 +35,5 @@
 @import url(../blocks/element/__button/_black/element__button_black.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__box/popup__box.css);
-@import url(../blocks/popup/__title/_image/popup__title_image.css);
-@import url(../blocks/popup/__close/_image/popup__close_image.css);
+@import url(../blocks/popup/__title-image/popup__title-image.css);
+@import url(../blocks/popup/__сlose-image/popup__close-image.css);
