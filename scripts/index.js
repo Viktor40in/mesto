@@ -21,8 +21,8 @@ const cardBox = document.querySelector('.elements');
 
 const popupImage = document.querySelector('.popupImage');
 const imageFromPopup = document.querySelector('.popup__image');
-const popupImageTitle = document.querySelector('.popup__title_image');
-const popupImageCloseButton = document.querySelector('.popup__close_image');
+const popupImageTitle = document.querySelector('.popup__title-image');
+const popupImageCloseButton = document.querySelector('.popup__close-image');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
