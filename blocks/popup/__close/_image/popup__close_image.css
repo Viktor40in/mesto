@@ -1,7 +1,7 @@
-.popupImage__close {
+.popup__close_image {
   width: 60px;
   height: 60px;
-  background: transparent url(../../../images/popup__close.svg);
+  background: transparent url(../../../../images/popup__close.svg);
   background-size: 57px 57px;
   background-repeat: no-repeat;
   border: none;
@@ -13,11 +13,11 @@
   cursor: pointer;
   outline: none;
 }
-.popupImage__close:hover {
+.popup__close_image:hover {
   opacity: 0.6;
 }
 @media screen and (max-width:767px) {
-  .popupImage__close {
+  .popup__close_image {
     background-size: 40px;
     right: 4px;
     top: -18px;
