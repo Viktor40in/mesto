@@ -13,8 +13,8 @@ const popupCardCloseButton = document.querySelector('.popupCard__close');
 const addButton = document.querySelector('.profile__add-button');
 
 const confirmAddCard = document.querySelector('.popupCard__submit');
-const userNameAdd = document.querySelector('.popup__input_name');
-const userProfessionAdd = document.querySelector('.popup__input_url');
+const cardNameInput = document.querySelector('.popup__input_name');
+const cardUrlInput = document.querySelector('.popup__input_url');
 
 const itemTemplate = document.querySelector('.templateCard').content;
 const cardBox = document.querySelector('.elements');
@@ -43,7 +43,7 @@ function popupClickHandler(event) {
     closePopup(event.target);
   }
 }
-function submitForm(event) {
+function submitEditProfileForm(event) {
   event.preventDefault();
   title.textContent = userName.value;
   subTitle.textContent = userProfession.value;
@@ -52,7 +52,7 @@ function submitForm(event) {
 editButton.addEventListener('click', handleEditPerson);
 popupCloseButton.addEventListener('click',() => closePopup(popupEditPerson));
 popup.addEventListener('mousedown', popupClickHandler);
-form.addEventListener('submit', submitForm);
+form.addEventListener('submit', submitEditProfileForm);
 
 // popup for adding Cards
 addButton.addEventListener('click',() => openPopup(popupCard));
@@ -60,32 +60,40 @@ popupCardCloseButton.addEventListener('click', () => closePopup(popupCard));
 popupCard.addEventListener('mousedown', popupClickHandler);
 
 //rendering cards from massive
+initialCards.forEach(object => addCard(cardBox, object));
 
-function render() {
-  initialCards.forEach(renderItem);
+function createCard(object) {
+  const cardTemplate = itemTemplate.cloneNode(true); 
+  const templateImage = cardTemplate.querySelector('.element__image');
+  const templateText = cardTemplate.querySelector('.element__text');
+  const templateButtonLike = cardTemplate.querySelector('.element__button');
+  const templateButtonRecycle = cardTemplate.querySelector('.element__recycle');
+  templateText.innerText = object.name;
+  templateImage.src = object.link;
+  templateImage.alt = object.name;
+  initialListeners(templateButtonRecycle, templateButtonLike, templateImage);
+  return cardTemplate;
 }
-function renderItem(object) {
-  const htmlElement = itemTemplate.cloneNode(true); 
-  htmlElement.querySelector('.element__text').innerText = object.name;
-  htmlElement.querySelector('.element__image').setAttribute('src', object.link);
-  htmlElement.querySelector('.element__recycle').addEventListener('click', toTrash); // listener for recycle button
-  htmlElement.querySelector('.element__button').addEventListener('click', likeButtonToBlack); // listener for negro button
-  htmlElement.querySelector('.element__image').addEventListener('click', renderPopupImage); // listener for image popup
-  cardBox.appendChild(htmlElement);
+function addCard(container, element){
+  container.prepend(createCard(element));
 }
-render()
+function initialListeners(templateButtonRecycle, templateButtonLike, templateImage){
+  templateButtonRecycle.addEventListener('click', toTrash); // listener for recycle button
+  templateButtonLike.addEventListener('click', likeButtonToBlack); // listener for negro button
+  templateImage.addEventListener('click', renderPopupImage); // listener for image popup
+}
 // function for adding new card
-
-function confirmAdding(event){
+function submitAddCardForm(event){
   event.preventDefault();
-  const htmlElement = itemTemplate.cloneNode(true); 
-  htmlElement.querySelector('.element__text').textContent = userNameAdd.value;
-  htmlElement.querySelector('.element__image').src = userProfessionAdd.value;
-  htmlElement.querySelector('.element__recycle').addEventListener('click', toTrash); // listener for recycle button
-  cardBox.prepend(htmlElement);
-  closePopup(popupCard);
+  const object = {
+    name: cardNameInput.value,
+    link: cardUrlInput.value,
+  };
+  addCard(cardBox, object);
+  closePopup(popupCard); 
 }
-confirmAddCard.addEventListener('click', confirmAdding);
+confirmAddCard.addEventListener('click', submitAddCardForm); //listener for submit button to add card
+
 
 //recycle button in action
 function toTrash(evt){
@@ -99,6 +107,7 @@ function likeButtonToBlack(evt) {
 function renderPopupImage(evt) {
   imageFromPopup.src = evt.target.getAttribute('src');
   popupImageTitle.innerText = evt.target.closest('.element').querySelector('.element__text').textContent;
+  imageFromPopup.alt = evt.target.closest('.element').querySelector('.element__text').textContent;
   openPopup(popupImage);
 }
 popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
