@@ -1,8 +1,8 @@
 const popup = document.querySelector('.popup');
 const popupEditPerson = document.querySelector('.popupEditPerson');
 const editButton = document.querySelector('.profile-info__edit-button');
+const popupEditPersonSubmit = document.querySelector('.popupEditPerson__submit')
 const popupCloseButton = document.querySelector('.popup__close');
-const form = document.querySelector('.popup__form');
 const title = document.querySelector('.profile-info__title');
 const subTitle = document.querySelector('.profile-info__subtitle');
 const userName = document.querySelector('.popup__input_type-name');
@@ -52,7 +52,7 @@ function submitEditProfileForm(event) {
 editButton.addEventListener('click', handleEditPerson);
 popupCloseButton.addEventListener('click',() => closePopup(popupEditPerson));
 popup.addEventListener('mousedown', popupClickHandler);
-form.addEventListener('submit', submitEditProfileForm);
+popupEditPersonSubmit.addEventListener('click', submitEditProfileForm);
 
 // popup for adding Cards
 addButton.addEventListener('click',() => openPopup(popupCard));
@@ -91,6 +91,8 @@ function submitAddCardForm(event){
   };
   addCard(cardBox, object);
   closePopup(popupCard); 
+  cardNameInput.value = '';
+  cardUrlInput.value= '';
 }
 confirmAddCard.addEventListener('click', submitAddCardForm); //listener for submit button to add card
 
@@ -105,9 +107,10 @@ function likeButtonToBlack(evt) {
 }
 //popup for image
 function renderPopupImage(evt) {
+  const popupTitle = evt.target.closest('.element').querySelector('.element__text');
   imageFromPopup.src = evt.target.getAttribute('src');
-  popupImageTitle.innerText = evt.target.closest('.element').querySelector('.element__text').textContent;
-  imageFromPopup.alt = evt.target.closest('.element').querySelector('.element__text').textContent;
+  popupImageTitle.innerText = popupTitle.textContent;
+  imageFromPopup.alt = popupTitle.textContent;
   openPopup(popupImage);
 }
 popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
